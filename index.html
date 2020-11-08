@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <link rel="stylesheet" href="src/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/35c578ec47.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <form id="search-engine">
+      <div class="form-group" >
+        <div class="input-style">
+          <input type="text" placeholder="Enter a City name..." class="form-control" id="user-input" />
+          <input type="submit" class="btn btn-primary" id="search-button" value="Search" />
+          <!--this is the forecast cards  <i class="fas fa-search"></i>
+          </button>-->
+          <div class="current"><button class="btn btn-success" id="current-location-button">Current</button></div>
+        </div>
+        
+        </form>
+        <div class="col-12">
+          <hr>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <h2 id="current-city"></h2>
+          </div>
+          <!--This is the current citys weather-->
+            <div class="card-body"> 
+              <div class="row" style="background-color: #f6f6f6; border: 1px solid #262977; border-radius: 4px;padding: 5px;">
+                <div class="col-6">
+                  <div style="display: flex; margin-top: 18px;">
+                    <div style="font-size:16px; display: flex;">
+                      <span style="font-size: 55px; font-weight:400; margin-left: 15px;" id="temp-value"></span>
+                      <span id= "unit">°C</span>
+                    </div>
+                  </div>
+                  <div>
+                      <p class="current-day">
+                        <ul>
+                            <li id="Present-day-time">
+                              Saturday 11.45 am
+                            </li>
+                            <li id= "description">
+                            </li>
+                            <li>
+                              Wind: <span id="wind-speed"></span>mph
+                            </li>
+                            <li>
+                              Humidity: <span id="humidity"></span>%
+                            </li>
+                        </ul>
+                      </p>
+                    </div>
+                  </div>
+                  <!--this is the forecast cards-->
+                    <div class="col-sm-2" style="margin-left: -20px;">
+                      <!--Sun-->
+                      <div>
+                        <div class="card">
+                          <div class="card-body">
+                            <h3 class="card-title">Sun</h3>
+                            <i class="fas fa-cloud-sun image"></i>
+                            <p class="card-text">
+                              14°C
+                            </p>
+                          </div>
+                        </div>
+                        <!--Wedn-->
+                        <div class="card">
+                          <div class="card-body">
+                            <h3 class="card-title">Wed</h3>
+                            <i class="fas fa-cloud-sun-rain image"></i>
+                            <p class="card-text">
+                              15°C
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--this is the forecast cards second column-->
+                    <div class="col-sm-2">
+                      <!--Mon-->
+                      <div>
+                        <div class="card">
+                          <div class="card-body">
+                            <h3 class="card-title">Mon</h3>
+                            <i class="fas fa-cloud-sun-rain image"></i>
+                            <p class="card-text">
+                              14°C
+                            </p>
+                          </div>
+                        </div>
+                        <!--Thurs -->
+                        <div class="card">
+                          <div class="card-body">
+                            <h3 class="card-title">Thurs</h3>
+                            <i class="fas fa-cloud-showers-heavy image"></i>
+                            <p class="card-text">
+                              14°C
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--this is the forecast cards third column-->
+                    <div class="col-sm-2">
+                      <!--Tues-->
+                      <div>
+                        <div class="card">
+                          <div class="card-body">
+                            <h3 class="card-title">Tues</h3>
+                            <i class="fas fa-sun image"></i>
+                            <p class="card-text">
+                              14°C
+                            </p>
+                          </div>
+                        </div>
+                        <!--Sun -->
+                        <div class="card">
+                          <div class="card-body">
+                            <h3 class="card-title">Fri</h3>
+                            <i class="fas fa-cloud-sun image"></i>
+                            <p class="card-text">
+                              14°C
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
+
+
